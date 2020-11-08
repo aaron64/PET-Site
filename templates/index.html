@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>PET</title>
+	<meta name="author" content="Aaron Chambers">
+
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		{% for network in networks %}
+			{% if network.ssid|length %}
+			<div class="card mt-2">
+				<div class="card-title">
+					{{ network.ssid }}
+				</div>
+				<div class="card-body">
+					{{ network.bssid }}
+				</div>
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<script src="static/js/jquery.min.js"/>
+	<script src="static/js/bootstrap.bundle.min.js"/>
+</body>
+</html>
